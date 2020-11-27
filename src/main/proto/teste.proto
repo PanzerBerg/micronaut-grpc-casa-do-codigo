@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.zup";
+option java_outer_classname = "Teste";
+option objc_class_prefix = "HLW";
+
+package com.zup;
+
+service Autor {
+  rpc criarAutor(AutorRequest) returns (AutorResponse) {}
+}
+
+service Categoria {
+  rpc criaCategoria(CategoriaRequest) returns (CategoriaRequest) {}
+}
+
+message AutorRequest {
+  string nome = 1;
+  string email = 2;
+  string descricao = 3;
+}
+
+message AutorResponse {
+  string id = 1;
+}
+
+message CategoriaRequest {
+  string nome = 1;
+}
